@@ -1,20 +1,20 @@
 import React from "react";
-import Login from "../Pages/Login";
+import Login from "../Pages/Login/";
 import Dashboard from "../Pages/Dashboard";
-import PageNotFound from "../Pages/PageNotFound";
+import PageNotFound from "../Pages/NotFound";
 
 const routes = [
   {
     path: "/",
-    component: Login,
+    element: <Login />,
   },
   {
     path: "/dashboard",
-    component: Dashboard,
+    element: <Dashboard />,
   },
   {
     path: "/*",
-    component: PageNotFound,
+    element: <PageNotFound />,
   },
 ];
 
