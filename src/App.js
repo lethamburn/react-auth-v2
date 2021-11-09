@@ -10,8 +10,9 @@ function App() {
       <Router>
         <Routes>
           {routes.map((route) => (
-            <Route key={route.path} path={route.path} element={<AppRoutes />} />
+            <Route key={route.path} path={route.path} element={route.element} />
           ))}
+          <Route element={<AppRoutes />} path="/dashboard" />
         </Routes>
       </Router>
     </AuthProvider>

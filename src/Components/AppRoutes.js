@@ -1,14 +1,11 @@
-import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
 import { useAuthState } from "../Context";
+import { Navigate } from "react-router-dom";
+import Dashboard from "../Pages/Dashboard";
 
-const AppRoutes = ({ element: Element, isPrivate, ...rest }) => {
-  const userDetails = useAuthState();
-  return isPrivate && !Boolean(userDetails.token) ? (
-    <Navigate to="/" />
-  ) : (
-    <Outlet/>
-  );
-};
+function AppRoutes() {
+  const { user } = useAuthState();
+
+  return <>{user ? <Dashboard /> : <Navigate to="/" />}</>;
+}
 
 export default AppRoutes;
